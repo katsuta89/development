@@ -1,7 +1,7 @@
 version: 0.2
 
 env:
-    parameter-store:
+    variables:
         GAME_ID: "00000003"
         CH: "master"
 phases:
