@@ -1,4 +1,9 @@
-version: 0.1
+version: 0.2
+
+env:
+    parameter-store:
+        GAME_ID: 00000003
+        CH:master
 
 phases:
     install:
@@ -9,11 +14,8 @@ phases:
             - echo Nothing to do in the pre_build phase...
     build:
         commands:
-            - echo $CODEBUILD_SOURCE_VERSION
-            - echo $ENV
-            - printenv
             - echo "******** Uploading to S3 ********"
-            - aws s3 sync src/ s3://free-domain-test.tk/game_id_00000003/
+            - aws s3 sync src/ s3://free-domain-test.tk/game_id_$GAME_ID/$CH
     post_build:
         commands:
             - echo Build completed on `date`
