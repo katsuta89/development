@@ -2,9 +2,8 @@ version: 0.2
 
 env:
     parameter-store:
-        GAME_ID: 00000003
-        CH:master
-
+        GAME_ID: "00000003"
+        CH: "master"
 phases:
     install:
         commands:
