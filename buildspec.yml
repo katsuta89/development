@@ -9,8 +9,9 @@ phases:
             - echo Nothing to do in the pre_build phase...
     build:
         commands:
+            - echo $CODEBUILD_SOURCE_VERSION
             - echo "******** Uploading to S3 ********"
-            - aws s3 sync src/ s3://free-domain-test.tk/game_id_00000003/master/
+            - aws s3 sync src/ s3://free-domain-test.tk/game_id_00000003/
     post_build:
         commands:
             - echo Build completed on `date`
