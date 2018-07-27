@@ -1,3 +1,5 @@
+version: 0.1
+
 phases:
     install:
         commands:
@@ -8,7 +10,8 @@ phases:
     build:
         commands:
             - echo "******** Uploading to S3 ********"
-            - aws s3 sync / s3://free-domain-test.tk/game_id_00000003/master/
+            - aws s3 sync src/ s3://free-domain-test.tk/game_id_00000003/master/
     post_build:
         commands:
             - echo Build completed on `date`
+
